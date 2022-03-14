@@ -4,11 +4,12 @@
   разделенными запятыми.
 */
 export function arraySorting(data) {
-  let answer = data.split(',').sort().join(',');
-  return answer;
+    let answer = data
+        .split(',')
+        .sort((a, b) => a - b)
+        .join(',');
+    return answer;
 }
-
-
 
 /*
   В функцию arrayFiltering() приходит массив целых чисел.
@@ -16,14 +17,13 @@ export function arraySorting(data) {
   были бы удалены из массива, и верните его в качестве результата функции.
 */
 export function arrayFiltering(data) {
-  for(let i=0; i<data.length; i++){
-    if(data[i]>100){
-      data.splice(i--,1);
+    for (let i = 0; i < data.length; i++) {
+        if (data[i] > 100) {
+            data.splice(i--, 1);
+        }
     }
-  }
-  return data;
+    return data;
 }
-
 
 /*
   В функцию arrayPushing() приходят два массива целых чисел размерностью 5 элементов.
@@ -31,13 +31,12 @@ export function arrayFiltering(data) {
   значения из первых двух массивов, и верните его в качестве результата функции.
 */
 export function arrayPushing(array1, array2) {
-  let arr = []
+    let arr = [];
 
-  for(let i=0; i<5; i++){
-    for(let j=0;j<=1;j++){
-      j==0 ? arr.push(array1[i]) : arr.push(array2[i])
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= 1; j++) {
+            j == 0 ? arr.push(array1[i]) : arr.push(array2[i]);
+        }
     }
-  }
-  return(arr);
+    return arr;
 }
-
